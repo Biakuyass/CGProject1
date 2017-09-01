@@ -3,8 +3,9 @@
 // Author: Jarek ROSSIGNAC
 PImage KimPix; // picture of author's face, should be: data/pic.jpg in sketch folder
 PImage MartinPix; // picture of author's face, should be: data/pic.jpg in sketch folder
-
+ 
 //**************************** global variables ****************************
+
 pts P = new pts();
 float t=0.5, f=0;
 Boolean animate=true, linear=true, circular=true, beautiful=true;
@@ -35,20 +36,19 @@ void draw() {      // executed at each frame
   stroke(black); edge(S,L); edge(E,R);
   float s=d(S,L), e=d(E,R); // radii of control circles computged from distances
   CIRCLE Cs = C(S,s), Ce = C(E,e); // declares circles
-  stroke(dgreen); Cs.drawCirc(); stroke(red); Ce.drawCirc(); // draws both circles in green and red
+  
+  
  
-
-   
-  strokeWeight(5);
+  
   if(b1)
     {
-    // your code for part 1
     CreateTangentCircle();
     }
-    
+ 
   if(b2)
     {
-    // your code for part 2
+      stroke(magenta);
+      CreateMedialAxis();
     }
 
    stroke(black);   strokeWeight(1);
@@ -110,7 +110,7 @@ void mouseDragged() {
 
 //**************************** text for name, title and help  ****************************
 String title ="6491 2017 P1: Caplets", 
-       name ="Student: Pierre Martin, Jay Kim",
+       name ="Student: Luyao Huang,Han Zhang",
        menu="?:(show/hide) help, s/l:save/load control points, a: animate, `:snap picture, ~:(start/stop) recording movie frames, Q:quit",
        guide="click and drag to edit, press '1' or '2' to toggle LINEAR/CIRCULAR,"; // help info
 
